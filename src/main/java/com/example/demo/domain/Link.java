@@ -1,11 +1,15 @@
 package com.example.demo.domain;
 
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
-import java.util.Objects;
 
 @Entity
+@NoArgsConstructor
+@Data
 public class Link {
 
     @Id
@@ -16,11 +20,14 @@ public class Link {
 
 
     // comments
+    /* public Link(){ }
+    * this will comment out cuz will use @NoArgsConstructor instead of
+    * */
 
-    public Link(){ }
 
 
-    public Long getId() {
+/*
+*     public Long getId() {
         return id;
     }
 
@@ -43,8 +50,8 @@ public class Link {
     public void setUrl(String url) {
         this.url = url;
     }
-
-    @Override
+    *
+    *  @Override
     public String toString() {
         return "Link{" +
                 "id=" + id +
@@ -65,4 +72,10 @@ public class Link {
     public int hashCode() {
         return Objects.hash(id, title);
     }
+*
+* using @Datat instead of all these get & set
+*
+* */
+
+
 }
